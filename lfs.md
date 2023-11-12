@@ -2,20 +2,22 @@
 permalink: LFS/
 ---
 
-# LFS 11.3 AARCH64 (ARM64)
+# LFS AARCH64 (ARM64)
 
-[HOME](../) --- [LFS 11.3 ARM64 Book (<span style="color:red; font-weight:bold;">KW</span>)](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) --- [LFS 11.3 AMD64 Book (<span style="color:red; font-weight:bold;">ORI</span>)](https://www.linuxfromscratch.org/lfs/view/11.3/index.html) --- [&#x213C;](#idxXX)<br id="idx00">
+[HOME](../) --- [LFS ARM64 Book (<span style="color:red; font-weight:bold;">KW</span>)](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) --- [LFS 12.0 AMD64 Book (<span style="color:red; font-weight:bold;">ORI</span>)](https://www.linuxfromscratch.org/lfs/view/12.0/) --- [&#x213C;](#idxXX)<br id="idx00">
 ## TOC
 
 * [Packages](#idx01)
-* [5.3. GCC-12.2.0 - Pass 1](#idx02)
-* [5.6. Libstdc++ from GCC-12.2.0](#idx03)
+* [4.2. Creating a Limited Directory Layout in the LFS Filesystem](#CH42)
+* [4.3. Adding the LFS User](#CH43)
+* [5.3. GCC-13.2.0 - Pass 1](#idx02)
+* [5.6. Libstdc++ from GCC-13.2.0](#idx03)
 * [6.16. Xz-5.4.1](#idx04)
-* [6.18. GCC-12.2.0 - Pass 2](#idx05)
+* [6.18. GCC-13.2.0 - Pass 2](#idx05)
 * [8.5. Glibc-2.37](#idx06)
 * [8.8. Xz-5.4.1](#idx07)
 * [8.16. Expect-5.45.4](#idx08)
-* [8.26. GCC-12.2.0](#idx09)
+* [8.26. GCC-13.2.0](#idx09)
 * [8.46. OpenSSL-3.0.8](#idx10)
 * [8.49. Libffi-3.4.4](#idx11)
 * [8.50. Python-3.11.2](#idx12)
@@ -47,9 +49,9 @@ permalink: LFS/
 * [8.76. Sysvinit-3.06 --> 8.77. Sysvinit-3.07](#idx19)
 
 [&#x213C;](#)<br id="idx01">
-## Packages (16 May 2023)
+## Packages
 
-[LFS 11.3 ARM64](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) is not an official version (KW) and changes frequently. Therefore, it is reminded to use a package similar to the official version of LFS 11.3 ([ORI](https://www.linuxfromscratch.org/lfs/view/11.3/index.html)).
+[LFS ARM64](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) is not an official version (KW) and changes frequently. Therefore, it is reminded to use a package similar to the official version of LFS 12.0 ([ORI](https://www.linuxfromscratch.org/lfs/view/12.0/)).
 
 Because of this, the instructions for the KW version packages often differ from those for the ORI. Since it uses the ORI package, sometimes it must also be compiled using the ORI method. Please be careful, especially when working on chapter 8, and specifically compile GCC (chapter 8.26).
 
@@ -64,9 +66,9 @@ sleep 3
 mkdir -pv $LFS/sources/
 chmod -v  a+wt $LFS/sources/
 cd        $LFS/sources/
-wget -c   https://www.linuxfromscratch.org/lfs/view/11.3/wget-list-sysv --directory-prefix=$LFS/sources
+wget -c   https://www.linuxfromscratch.org/lfs/view/12.0/wget-list-sysv --directory-prefix=$LFS/sources
 wget -c   --input-file=$LFS/sources/wget-list-sysv --directory-prefix=$LFS/sources
-wget -c   https://www.linuxfromscratch.org/lfs/view/11.3/md5sums --directory-prefix=$LFS/sources
+wget -c   https://www.linuxfromscratch.org/lfs/view/12.0/md5sums --directory-prefix=$LFS/sources
 md5sum -c md5sums
 # Not in the ORI book
 wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
@@ -74,7 +76,7 @@ chown root:root $LFS/sources/*
 
 ```
 
-* [**ORI** Package Link](https://www.linuxfromscratch.org/lfs/view/11.3/chapter03/introduction.html)
+* [**ORI** Package Link](https://www.linuxfromscratch.org/lfs/view/12.0/chapter03/introduction.html)
 * [KW Package Link](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/chapter03/introduction.html)
 
 [&#x213C;](#)<br id="idx01">
@@ -84,7 +86,7 @@ chown root:root $LFS/sources/*
 | x -------------------------------- x | x -------------------------------- x | 
 | Coreutils-9.1                        | Coreutils-9.3                        |
 | Gawk-5.2.1                           | Gawk-5.2.2                           |
-| GCC-12.2.0                           | GCC-13.1.0                           |
+| GCC-13.2.0                           | GCC-13.2.0                           |
 | Grep-3.8                             | Grep-3.10                            |
 | Iana-Etc-20230202                    | Iana-Etc-20230418                    |
 | IPRoute2-6.3.0                       | IPRoute2-6.3.0                       |
@@ -108,8 +110,36 @@ chown root:root $LFS/sources/*
 | Zstd-1.5.4                           | Zstd-1.5.5                           |
 | x -------------------------------- x | x -------------------------------- x | 
 
+
+[&#x213C;](#)<br id="CH42">
+## 4.2. Creating a Limited Directory Layout in the LFS Filesystem
+
+* (ROOT)
+* The LFS editors have deliberately decided not to use a /usr/lib64 directory. 
+
+```
+mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+
+for i in bin lib sbin; do
+  ln -sv usr/$i $LFS/$i
+done
+
+mkdir -pv $LFS/tools
+
+```
+
+[&#x213C;](#)<br id="CH43">
+## 4.3. Adding the LFS User
+
+* Grant lfs full access to all the directories under $LFS by making lfs the owner
+
+```
+chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+
+```
+
 [&#x213C;](#)<br id="idx02">
-## 5.3. GCC-12.2.0 - Pass 1
+## 5.3. GCC-13.2.0 - Pass 1
 
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”
 
@@ -120,7 +150,7 @@ sed -e '/lp64=/s/lib64/lib/' \
 ```
 
 [&#x213C;](#)<br id="idx03">
-## 5.6. Libstdc++ from GCC-12.2.0
+## 5.6. Libstdc++ from GCC-13.2.0
 
 * Prepare Libstdc++ for compilation:
 
@@ -132,7 +162,7 @@ sed -e '/lp64=/s/lib64/lib/' \
     --disable-multilib              \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/12.2.0
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/13.2.0
 
 ```
 
@@ -151,7 +181,7 @@ sed -e '/lp64=/s/lib64/lib/' \
 ```
 
 [&#x213C;](#)<br id="idx05">
-## 6.18. GCC-12.2.0 - Pass 2
+## 6.18. GCC-13.2.0 - Pass 2
 
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”
 
@@ -194,7 +224,7 @@ tar -C tclconfig -xf ../autoconf-2.71.tar.xz --strip-components=2 \
 ```
 
 [&#x213C;](#)<br id="idx09">
-## 8.26. GCC-12.2.0
+## 8.26. GCC-13.2.0
 
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”:
 
