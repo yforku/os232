@@ -2,4 +2,4 @@
 
 || [LINKS](LINKS/) || [LFS](LFS/) || [LOG](TXT/mylog.txt) || [GitHub](https://github.com/yforku/os232/) ||
 
-#### REV29: Sat 18 Nov 2023 15:00
+#### REV30: Sun 19 Nov 2023 05:00

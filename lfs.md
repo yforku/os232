@@ -25,7 +25,7 @@ permalink: LFS/
 * [8.51. Wheel-0.38.4 --> 8.52. Wheel-0.40.0](#idx13a)
 * 8.52. Ninja-1.11.1 --> 8.53. Ninja-1.11.1
 * 8.53. Meson-1.0.0 --> 8.54. Meson-1.1.0
-* [8.54. Coreutils-9.1 --> 8.55. Coreutils-9.3](#idx14)
+* [8.54. Coreutils-9.3 --> 8.55. Coreutils-9.4](#idx14)
 * 8.55. Check-0.15.2 --> 8.56. Check-0.15.2
 * 8.56. Diffutils-3.9 --> 8.57. Diffutils-3.9
 * [8.57. Gawk-5.2.1 --> 8.58. Gawk-5.2.2](#idx15)
@@ -84,30 +84,30 @@ chown root:root $LFS/sources/*
 
 | **ORI (amd64)**                      | **KW (arm64)**                       |
 | x -------------------------------- x | x -------------------------------- x | 
-| Coreutils-9.1                        | Coreutils-9.3                        |
-| Gawk-5.2.1                           | Gawk-5.2.2                           |
+| Coreutils-9.3                        | Coreutils-9.4                        |
+| Gawk-5.2.2                           | Gawk-5.2.2                           |
 | GCC-13.2.0                           | GCC-13.2.0                           |
-| Grep-3.8                             | Grep-3.10                            |
-| Iana-Etc-20230202                    | Iana-Etc-20230418                    |
-| IPRoute2-6.3.0                       | IPRoute2-6.3.0                       |
-| Less-608                             | Less-633                             |
-| Libcap-2.67                          | Libcap-2.68                          |
-| Libelf from Elfutils-0.188           | Libelf from Elfutils-0.189           |
-| Linux-6.1.11                         | Linux-6.3.2                          |
-| Make-4.4                             | Make-4.4.1                           |
-| Man-pages-6.03                       | Man-pages-6.04                       |
-| Meson-1.0.0                          | Meson-1.0.0                          |
-| OpenSSL-3.0.8                        | OpenSSL-3.1.0                        |
-| Perl-5.36.0                          | Perl-5.36.1                          |
-| Procps-ng-4.0.2                      | Procps-ng-4.0.3                      |
-| Python-3.11.2                        | Python-3.11.3                        |
-| Sysvinit-3.06                        | Sysvinit-3.07                        |
-| Texinfo-7.0.2                        | Texinfo-7.0.3                        |
-| tzdata2022g.tar.gz                   | tzdata2023c.tar.gz                   |
-| Vim-9.0.1273                         | Vim-9.0.1503                         |
-| Wheel-0.38.4                         | Wheel-0.40.0                         |
-| Xz-5.4.1                             | Xz-5.4.3                             |
-| Zstd-1.5.4                           | Zstd-1.5.5                           |
+| Grep-3.11                            | Grep-3.11                            |
+| Iana-Etc-20230810                    | Iana-Etc-20230810                    |
+| IPRoute2-6.4.0                       | IPRoute2-6.4.0                       |
+| Less-643                             | Less-643                             |
+| Libcap-2.69                          | Libcap-2.69                          |
+| Libelf from Elfutils-0.189           | Libelf from Elfutils-0.189           |
+| Linux-6.4.12                         | Linux-6.5.1                          |
+| Make-4.4.1                           | Make-4.4.1                           |
+| Man-pages-6.05.01                    | Man-pages-6.05.01                    |
+| Meson-1.2.1                          | Meson-1.2.1                          |
+| OpenSSL-3.1.2                        | OpenSSL-3.1.2                        |
+| Perl-5.38.0                          | Perl-5.38.0                          |
+| Procps-ng-4.0.3                      | Procps-ng-4.0.4                      |
+| Python-3.11.4                        | Python-3.11.5                        |
+| Sysvinit-3.07                        | Sysvinit-3.08                        |
+| Texinfo-7.0.3                        | Texinfo-7.0.3                        |
+| tzdata2023c.tar.gz                   | tzdata2023c.tar.gz                   |
+| Vim-9.0.1677                         | Vim-9.0.1837                         |
+| Wheel-0.41.1                         | Wheel-0.41.2                         |
+| Xz-5.4.4                             | Xz-5.4.4                             |
+| Zstd-1.5.5                           | Zstd-1.5.5                           |
 | x -------------------------------- x | x -------------------------------- x | 
 
 
