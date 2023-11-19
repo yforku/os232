@@ -12,7 +12,6 @@ permalink: LFS/
 * [4.3. Adding the LFS User](#CH43)
 * [5.3. GCC-13.2.0 - Pass 1](#idx02)
 * [5.5. Glibc-2.38](#idx505)
-* [5.6. Libstdc++ from GCC-13.2.0](#idx03)
 * [6.16. Xz-5.4.1](#idx04)
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
 * [8.5. Glibc-2.37](#idx06)
@@ -170,23 +169,6 @@ sed -e '/lp64=/s/lib64/lib/' \
 ## 5.5. Glibc-2.38
 
 * Skipping to create a symbolic link for LSB compliance (x86_64 only)! 
-
-[&#x213C;](#)<br id="idx03">
-## 5.6. Libstdc++ from GCC-13.2.0
-
-* Prepare Libstdc++ for compilation:
-
-```
-../libstdc++-v3/configure           \
-    --host=$LFS_TGT                 \
-    --build=$(../config.guess)      \
-    --prefix=/usr                   \
-    --disable-multilib              \
-    --disable-nls                   \
-    --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/13.2.0
-
-```
 
 [&#x213C;](#)<br id="idx04">
 ## 6.16. Xz-5.4.1
