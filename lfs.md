@@ -145,6 +145,18 @@ chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 [&#x213C;](#)<br id="idx02">
 ## 5.3. GCC-13.2.0 - Pass 1
 
+* Package version mpfr-4.2.0.tar.xz
+
+```
+tar -xf ../mpfr-4.2.0.tar.xz
+mv -v mpfr-4.2.0 mpfr
+tar -xf ../gmp-6.3.0.tar.xz
+mv -v gmp-6.3.0 gmp
+tar -xf ../mpc-1.3.1.tar.gz
+mv -v mpc-1.3.1 mpc
+
+```
+
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”
 
 ```
