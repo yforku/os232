@@ -51,9 +51,13 @@ permalink: LFS/
 [&#x213C;](#)<br id="idx01">
 ## Packages
 
-[LFS ARM64](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) is not an official version (KW) and changes frequently. Therefore, it is reminded to use a package similar to the official version of LFS 12.0 ([ORI](https://www.linuxfromscratch.org/lfs/view/12.0/)).
+[LFS ARM64](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) is not an official version (KW) and 
+changes frequently. Therefore, it is recommended to use a package similar to the official version of LFS 12.0 
+([ORI](https://www.linuxfromscratch.org/lfs/view/12.0/)).
 
-Because of this, the instructions for the KW version packages often differ from those for the ORI. Since it uses the ORI package, sometimes it must also be compiled using the ORI method. Please be careful, especially when working on chapter 8, and specifically compile GCC (chapter 8.26).
+Because of this, the instructions for the KW version packages often differ from those for the ORI. 
+Since it uses the ORI package, it must sometimes be compiled using the ORI method. 
+Please be careful, especially when working on chapter 8, and explicitly compiling GCC (chapter 8.27).
 
 ### LFS Chapter 3.1 Download Script for AMD64 and ARM64 (<span style="color:red; font-weight:bold;">root</span>)
 
