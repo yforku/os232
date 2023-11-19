@@ -13,6 +13,7 @@ permalink: LFS/
 * [5.3. GCC-13.2.0 - Pass 1](#idx02)
 * [5.5. Glibc-2.38](#idx505)
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
+* [7.2. Changing Ownership](#idx702)
 * [8.5. Glibc-2.37](#idx06)
 * [8.8. Xz-5.4.1](#idx07)
 * [8.16. Expect-5.45.4](#idx08)
@@ -189,6 +190,17 @@ mv -v mpc-1.3.1 mpc
 ```
 sed -e '/lp64=/s/lib64/lib/' \
     -i.orig gcc/config/aarch64/t-aarch64-linux
+
+```
+
+[&#x213C;](#)<br id="idx702">
+## 7.2. Changing Ownership
+
+* Change the ownership of the $LFS/* directories to user root by running the following command (<span 
+  style="color:red; font-weight:bold;">root</span>):
+
+```
+chown -R root:root $LFS/{usr,lib,var,etc,bin,sbin,tools}
 
 ```
 
