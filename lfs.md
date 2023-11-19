@@ -14,6 +14,7 @@ permalink: LFS/
 * [5.5. Glibc-2.38](#idx505)
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
 * [7.2 - 7.3 - 7.4 Script](#idx702)
+* [7.12. Util-linux-2.39.1](#idx712)
 * [8.5. Glibc-2.37](#idx06)
 * [8.8. Xz-5.4.1](#idx07)
 * [8.16. Expect-5.45.4](#idx08)
@@ -229,6 +230,28 @@ chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     MAKEFLAGS=-j$(nproc)        \
     /bin/bash --login
+
+```
+
+[&#x213C;](#)<br id="idx712">
+## 7.12. Util-linux-2.39.1
+
+* Prepare Util-linux for compilation:
+
+```
+./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
+            --libdir=/usr/lib    \
+            --runstatedir=/run   \
+            --docdir=/usr/share/doc/util-linux-2.39.1 \
+            --disable-chfn-chsh  \
+            --disable-login      \
+            --disable-nologin    \
+            --disable-su         \
+            --disable-setpriv    \
+            --disable-runuser    \
+            --disable-pylibmount \
+            --disable-static     \
+            --without-python
 
 ```
 
