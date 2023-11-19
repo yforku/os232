@@ -11,6 +11,7 @@ permalink: LFS/
 * [4.2. Creating a Limited Directory Layout in the LFS Filesystem](#CH42)
 * [4.3. Adding the LFS User](#CH43)
 * [5.3. GCC-13.2.0 - Pass 1](#idx02)
+* [5.5. Glibc-2.38](#idx505)
 * [5.6. Libstdc++ from GCC-13.2.0](#idx03)
 * [6.16. Xz-5.4.1](#idx04)
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
@@ -145,7 +146,7 @@ chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 [&#x213C;](#)<br id="idx02">
 ## 5.3. GCC-13.2.0 - Pass 1
 
-* Package version mpfr-4.2.0.tar.xz
+* Package version mpfr-4.2.0.tar.xz (not mpfr-4.2.1.tar.xz)
 
 ```
 tar -xf ../mpfr-4.2.0.tar.xz
@@ -164,6 +165,11 @@ sed -e '/lp64=/s/lib64/lib/' \
     -i.orig gcc/config/aarch64/t-aarch64-linux
 
 ```
+
+[&#x213C;](#)<br id="idx505">
+## 5.5. Glibc-2.38
+
+* Skipping to create a symbolic link for LSB compliance (x86_64 only)! 
 
 [&#x213C;](#)<br id="idx03">
 ## 5.6. Libstdc++ from GCC-13.2.0
