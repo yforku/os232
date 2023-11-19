@@ -14,6 +14,7 @@ permalink: LFS/
 * [5.5. Glibc-2.38](#idx505)
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
 * [7.2. Changing Ownership](#idx702)
+* [7.3.1; 7.3.2; 7.4 Script](#idx703)
 * [8.5. Glibc-2.37](#idx06)
 * [8.8. Xz-5.4.1](#idx07)
 * [8.16. Expect-5.45.4](#idx08)
@@ -201,6 +202,41 @@ sed -e '/lp64=/s/lib64/lib/' \
 
 ```
 chown -R root:root $LFS/{usr,lib,var,etc,bin,sbin,tools}
+
+```
+
+[&#x213C;](#)<br id="idx703">
+## 7.3.1; 7.3.2; 7.4 Script
+
+* Virtual Kernel File Systems and CHROOT
+
+```
+echo "= (1) ======================================"; sleep 1
+echo "LFS=$LFS NPROC=$(nproc) MAKEFLAGS=$MAKEFLAGS"
+echo "= (2) ======================================"; sleep 1
+mkdir -pv $LFS/{dev,proc,sys,run}
+echo "= (3) ======================================"; sleep 1
+mount -v --bind /dev $LFS/dev
+mount -v --bind /dev/pts $LFS/dev/pts
+mount -vt  proc proc  $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+echo "= (4) ======================================"; sleep 1
+if [ -h $LFS/dev/shm ]; then
+  mkdir -pv $LFS/$(readlink $LFS/dev/shm)
+else
+  mount -t tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
+fi
+echo "= (5) ======================================"; sleep 1
+df /
+echo "= (6) ======================================"; sleep 1
+chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    MAKEFLAGS=-j$(nproc)        \
+    /bin/bash --login
 
 ```
 
