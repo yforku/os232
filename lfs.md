@@ -12,7 +12,6 @@ permalink: LFS/
 * [4.3. Adding the LFS User](#CH43)
 * [5.3. GCC-13.2.0 - Pass 1](#idx02)
 * [5.5. Glibc-2.38](#idx505)
-* [6.16. Xz-5.4.1](#idx04)
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
 * [8.5. Glibc-2.37](#idx06)
 * [8.8. Xz-5.4.1](#idx07)
@@ -170,22 +169,20 @@ sed -e '/lp64=/s/lib64/lib/' \
 
 * Skipping to create a symbolic link for LSB compliance (x86_64 only)! 
 
-[&#x213C;](#)<br id="idx04">
-## 6.16. Xz-5.4.1
-
-* Prepare Xz for compilation:
-
-```
-./configure --prefix=/usr                     \
-            --host=$LFS_TGT                   \
-            --build=$(build-aux/config.guess) \
-            --disable-static                  \
-            --docdir=/usr/share/doc/xz-5.4.1
-
-```
-
 [&#x213C;](#)<br id="idx05">
 ## 6.18. GCC-13.2.0 - Pass 2
+
+* Package version mpfr-4.2.0.tar.xz (not mpfr-4.2.1.tar.xz)
+
+```
+tar -xf ../mpfr-4.2.0.tar.xz
+mv -v mpfr-4.2.0 mpfr
+tar -xf ../gmp-6.3.0.tar.xz
+mv -v gmp-6.3.0 gmp
+tar -xf ../mpc-1.3.1.tar.gz
+mv -v mpc-1.3.1 mpc
+
+```
 
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”
 

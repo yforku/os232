@@ -1,2 +1,2 @@
 ALL:
-	echo "XYZZY... Nothing happens"
+	@echo "XYZZY... Nothing happens"
