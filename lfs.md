@@ -16,7 +16,8 @@ permalink: LFS/
 * [7.2 - 7.3 - 7.4 Script](#idx702)
 * [7.12. Util-linux-2.39.1](#idx712)
 * [8.5. Glibc-2.38](#idx805)
-* [8.16. Expect-5.45.4](#idx08)
+* [8.18. Pkgconf-2.0.3 (KW)](#idx818)
+* [8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)](#idx819)
 * [8.26. GCC-13.2.0](#idx09)
 * [8.46. OpenSSL-3.0.8](#idx10)
 * [8.49. Libffi-3.4.4](#idx11)
@@ -265,16 +266,16 @@ ln -sfv /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 ```
 
-[&#x213C;](#)<br id="idx08">
-## 8.16. Expect-5.45.4
+[&#x213C;](#)<br id="idx818">
+## 8.18. Pkgconf-2.0.3 (KW)
+* SKIP: There is no Pkgconf-2.0.3 in ORI.
 
-* Update two config scripts to allow building this package for AArch64:
+[&#x213C;](#)<br id="idx819">
+## 8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)
+* There is a shift from 8.19 (KW) to 8.18 (ORI) ...
 
-```
-tar -C tclconfig -xf ../autoconf-2.71.tar.xz --strip-components=2 \
-    autoconf-2.71/build-aux/config.{guess,sub}
-
-```
+## 8.20. GMP-6.3.0 (KW) --> 8.19. GMP-6.3.0 (ORI) ...
+* There is a shift from 8.20 (KW) to 8.19 (ORI) ...
 
 [&#x213C;](#)<br id="idx09">
 ## 8.26. GCC-13.2.0
