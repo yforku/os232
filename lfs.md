@@ -19,7 +19,8 @@ permalink: LFS/
 * [8.18. Pkgconf-2.0.3 (KW)](#idx818)
 * [8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)](#idx819)
 * [8.21. MPFR-4.2.1 (KW) --> 8.20. MPFR-4.2.0 (ORI)](#idx821)
-* [8.26. GCC-13.2.0](#idx09)
+* [8.27. Shadow-4.14.0 (KW) --> 8.26. Shadow-4.13 (ORI)](#idx827)
+* [8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)](#idx09)
 * [8.46. OpenSSL-3.0.8](#idx10)
 * [8.49. Libffi-3.4.4](#idx11)
 * [8.50. Python-3.11.2](#idx12)
@@ -301,57 +302,19 @@ sed -e 's/+01,234,567/+1,234,567 /' \
 
 ```
 
+[&#x213C;](#)<br id="idx827">
+## 8.27. Shadow-4.14.0 (KW) --> 8.26. Shadow-4.13 (ORI)
+
+* Identical.
+
 [&#x213C;](#)<br id="idx09">
-## 8.26. GCC-13.2.0
+## 8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)
 
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”:
 
 ```
 sed -e '/lp64=/s/lib64/lib/' \
     -i.orig gcc/config/aarch64/t-aarch64-linux
-
-```
-
-* Prepare GCC for compilation:
-
-```
-../configure --prefix=/usr            \
-             LD=ld                    \
-             --enable-languages=c,c++ \
-             --enable-default-pie     \
-             --enable-default-ssp     \
-             --disable-multilib       \
-             --disable-bootstrap      \
-             --with-system-zlib
-
-```
-
-### <span style="color:red; font-weight:bold;">Follow the ORI Book</span>
-* After "make install"
-
-```
-chown -v -R root:root \
-    /usr/lib/gcc/$(gcc -dumpmachine)/12.2.0/include{,-fixed}
-ln -svr /usr/bin/cpp /usr/lib
-ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/12.2.0/liblto_plugin.so \
-        /usr/lib/bfd-plugins/
-echo 'int main(){}' > dummy.c
-cc dummy.c -v -Wl,--verbose &> dummy.log
-readelf -l a.out | grep ': /lib'
-
-```
-
-* Now make sure that we're set up to use the correct start files:
-
-```
-grep -E -o '/usr/lib.*/S?crt[1in].*succeeded' dummy.log
-grep -B4 '^ /usr/include' dummy.log
-grep 'SEARCH.*/usr/lib' dummy.log |sed 's|; |\n|g'
-grep "/lib.*/libc.so.6 " dummy.log
-grep found dummy.log
-rm -v dummy.c a.out dummy.log
-mkdir -pv /usr/share/gdb/auto-load/usr/lib
-mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib
 
 ```
 
