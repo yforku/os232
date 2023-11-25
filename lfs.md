@@ -18,6 +18,7 @@ permalink: LFS/
 * [8.5. Glibc-2.38](#idx805)
 * [8.18. Pkgconf-2.0.3 (KW)](#idx818)
 * [8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)](#idx819)
+* [8.21. MPFR-4.2.1 (KW) --> 8.20. MPFR-4.2.0 (ORI)](#idx821)
 * [8.26. GCC-13.2.0](#idx09)
 * [8.46. OpenSSL-3.0.8](#idx10)
 * [8.49. Libffi-3.4.4](#idx11)
@@ -276,6 +277,29 @@ ln -sfv /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 ## 8.20. GMP-6.3.0 (KW) --> 8.19. GMP-6.3.0 (ORI) ...
 * There is a shift from 8.20 (KW) to 8.19 (ORI) ...
+
+[&#x213C;](#)<br id="idx821">
+
+## 8.21. MPFR-4.2.1 (KW) --> 8.20. MPFR-4.2.0 (ORI)
+
+* Fix a test case based on a bug of old Glibc releases:
+
+```
+sed -e 's/+01,234,567/+1,234,567 /' \
+    -e 's/13.10Pd/13Pd/'            \
+    -i tests/tsprintf.c
+
+```
+
+* Compile the package and generate the HTML documentation:
+
+```
+./configure --prefix=/usr        \
+            --disable-static     \
+            --enable-thread-safe \
+            --docdir=/usr/share/doc/mpfr-4.2.0
+
+```
 
 [&#x213C;](#)<br id="idx09">
 ## 8.26. GCC-13.2.0
