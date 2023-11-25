@@ -15,8 +15,7 @@ permalink: LFS/
 * [6.18. GCC-13.2.0 - Pass 2](#idx05)
 * [7.2 - 7.3 - 7.4 Script](#idx702)
 * [7.12. Util-linux-2.39.1](#idx712)
-* [8.5. Glibc-2.37](#idx06)
-* [8.8. Xz-5.4.1](#idx07)
+* [8.5. Glibc-2.38](#idx805)
 * [8.16. Expect-5.45.4](#idx08)
 * [8.26. GCC-13.2.0](#idx09)
 * [8.46. OpenSSL-3.0.8](#idx10)
@@ -255,24 +254,14 @@ chroot "$LFS" /usr/bin/env -i   \
 
 ```
 
-[&#x213C;](#)<br id="idx06">
-## 8.5. Glibc-2.37
-
-* Since tzdata2022g.tar.gz has been replace with tzdata2023c.tar.gz, the workaround is to create a symbolic link (<span style="color:red; font-weight:bold;">root</span>).
-
-```
-ln -s /sources/tzdata2022g.tar.gz /sources/tzdata2023c.tar.gz
+[&#x213C;](#)<br id="idx805">
+## 8.5. Glibc-2.36 (locale)
+* SKIP “make localedata/install-locales”
+  * Or, your file “/lib/locale/locale-archive” size will be humongous.
+* Locale Time: Asia/Jakarta
 
 ```
-[&#x213C;](#)<br id="idx07">
-## 8.8. Xz-5.4.1
-
-* Prepare Xz for compilation with:
-
-```
-./configure --prefix=/usr    \
-            --disable-static \
-            --docdir=/usr/share/doc/xz-5.4.1
+ln -sfv /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 ```
 
