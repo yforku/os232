@@ -16,7 +16,7 @@ permalink: LFS/
 * [7.2 - 7.3 - 7.4 Script](#idx702)
 * [7.12. Util-linux-2.39.1](#idx712)
 * [8.5. Glibc-2.38](#idx805)
-* [8.18. Pkgconf-2.0.3 (KW)](#idx818)
+* [8.18. Pkgconf-2.0.3 (KW) --> 8.28. Pkgconf-2.0.1 (ORI)](#idx818)
 * [8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)](#idx819)
 * [8.21. MPFR-4.2.1 (KW) --> 8.20. MPFR-4.2.0 (ORI)](#idx821)
 * [8.27. Shadow-4.14.0 (KW) --> 8.26. Shadow-4.13 (ORI)](#idx827)
@@ -77,8 +77,6 @@ wget -c   https://www.linuxfromscratch.org/lfs/view/12.0/wget-list-sysv --direct
 wget -c   --input-file=$LFS/sources/wget-list-sysv --directory-prefix=$LFS/sources
 wget -c   https://www.linuxfromscratch.org/lfs/view/12.0/md5sums --directory-prefix=$LFS/sources
 md5sum -c md5sums
-# Not in the ORI book
-wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
 chown root:root $LFS/sources/*
 
 ```
@@ -269,8 +267,16 @@ ln -sfv /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 ```
 
 [&#x213C;](#)<br id="idx818">
-## 8.18. Pkgconf-2.0.3 (KW)
-* SKIP: There is no Pkgconf-2.0.3 in ORI.
+## 8.18. Pkgconf-2.0.3 (KW) --> 8.28. Pkgconf-2.0.1 (ORI)
+
+* Prepare Pkgconf for compilation:
+
+```
+./configure --prefix=/usr              \
+            --disable-static           \
+            --docdir=/usr/share/doc/pkgconf-2.0.1
+
+```
 
 [&#x213C;](#)<br id="idx819">
 ## 8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)
