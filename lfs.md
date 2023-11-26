@@ -16,6 +16,7 @@ permalink: LFS/
 * [7.2 - 7.3 - 7.4 Script](#idx702)
 * [7.12. Util-linux-2.39.1](#idx712)
 * [8.5. Glibc-2.38](#idx805)
+* [8.6. Zlib-1.3 (KW) --> 8.6. Zlib-1.2.13 (ORI)](#idx806)
 * [8.18. Pkgconf-2.0.3 (KW) --> 8.28. Pkgconf-2.0.1 (ORI)](#idx818)
 * [8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)](#idx819)
 * [8.21. MPFR-4.2.1 (KW) --> 8.20. MPFR-4.2.0 (ORI)](#idx821)
@@ -258,7 +259,7 @@ chroot "$LFS" /usr/bin/env -i   \
 ```
 
 [&#x213C;](#)<br id="idx805">
-## 8.5. Glibc-2.36 (locale)
+## 8.5. Glibc-2.38 (locale)
 * SKIP “make localedata/install-locales”
   * Or, your file “/lib/locale/locale-archive” size will be humongous.
 * Locale Time: Asia/Jakarta
@@ -267,6 +268,10 @@ chroot "$LFS" /usr/bin/env -i   \
 ln -sfv /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 ```
+
+[&#x213C;](#)<br id="idx806">
+## 8.6. Zlib-1.3 (KW) --> 8.6. Zlib-1.2.13 (ORI)
+* Different version, same procedure.
 
 [&#x213C;](#)<br id="idx818">
 ## 8.18. Pkgconf-2.0.3 (KW) --> 8.28. Pkgconf-2.0.1 (ORI)
