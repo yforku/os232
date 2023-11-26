@@ -24,35 +24,15 @@ permalink: LFS/
 * [8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)](#idx828)
 * [8.29. Ncurses-6.4 (KW) --> 8.29. Ncurses-6.4 (ORI)](#idx829)
 * [8.30. Sed-4.9 (KW) --> 8.30. Sed-4.9 (ORI)](#idx830)
-* [8.46. OpenSSL-3.0.8](#idx10)
-* [8.49. Libffi-3.4.4](#idx11)
-* [8.50. Python-3.11.2](#idx12)
-* [8.51. Flit-Core-3.8.0](#idx13)
-* [8.51. Wheel-0.38.4 --> 8.52. Wheel-0.40.0](#idx13a)
-* 8.52. Ninja-1.11.1 --> 8.53. Ninja-1.11.1
-* 8.53. Meson-1.0.0 --> 8.54. Meson-1.1.0
-* [8.54. Coreutils-9.3 --> 8.55. Coreutils-9.4](#idx14)
-* 8.55. Check-0.15.2 --> 8.56. Check-0.15.2
-* 8.56. Diffutils-3.9 --> 8.57. Diffutils-3.9
-* [8.57. Gawk-5.2.1 --> 8.58. Gawk-5.2.2](#idx15)
-* 8.58. Findutils-4.9.0 --> 8.59. Findutils-4.9.0
-* 8.59. Groff-1.22.4 --> 8.60. Groff-1.22.4
-* 8.60. GRUB-2.06 --> 8.61. GRUB-2.06
-* [8.62. IPRoute2-6.1.0 --> 8.63. IPRoute2-6.3.0](#idx16)
-* 8.63. Kbd-2.5.1 --> 8.64. Kbd-2.5.1
-* 8.64. Libpipeline-1.5.7 --> 8.65. Libpipeline-1.5.7
-* [8.65. Make-4.4 --> 8.66. Make-4.4.1](#idx16a)
-* 8.66. Patch-2.7.6 --> 8.67. Patch-2.7.6
-* 8.67. Tar-1.34 --> 8.68. Tar-1.34
-* 8.68. Texinfo-7.0.2 --> 8.69. Texinfo-7.0.2
-* [8.69. Vim-9.0.1273 --> 8.70. Vim-9.0.1503](#idx17)
-* 8.70. Eudev-3.2.11 --> 8.71. Eudev-3.2.11
-* 8.71. Man-DB-2.11.2 --> 8.72. Man-DB-2.11.2
-* [8.72. Procps-ng-4.0.2 --> 8.73. Procps-ng-4.0.3](#idx18)
-* 8.73. Util-linux-2.38.1 --> 8.74. Util-linux-2.38.1
-* 8.74. E2fsprogs-1.47.0 --> 8.75. E2fsprogs-1.47.0
-* 8.75. Sysklogd-1.5.1 --> 8.76. Sysklogd-1.5.1
-* [8.76. Sysvinit-3.06 --> 8.77. Sysvinit-3.07](#idx19)
+* [8.51. Python-3.11.5 (KW) --> 8.51. Python-3.11.4 (ORI)](#idx851)
+* [8.53. Wheel-0.41.2 (KW) --> 8.53. Wheel-0.41.1 (ORI)](#idx853)
+* [8.56. Coreutils-9.4 (KW) --> 8.56. Coreutils-9.3 (ORI)](#idx856)
+* [8.63. Gzip-1.13 (KW) --> 8.63. Gzip-1.12 (ORI)](#idx863)
+* [8.65. Kbd-2.6.2 (KW) --> 8.65. Kbd-2.6.1 (ORI)](#idx865)
+* [8.71. Vim-9.0.1837 (KW) --> 8.71. Vim-9.0.1677 (ORI)](#idx871)
+* [8.76. Procps-ng-4.0.4 (KW) --> 8.76. Procps-ng-4.0.3 (ORI)](#idx876)
+* [8.77. Util-linux-2.39.2 (KW) --> 8.77. Util-linux-2.39.1 (ORI)](#idx877)
+* [8.80. Sysvinit-3.08 (KW) --> 8.80. Sysvinit-3.07 (ORI)](#idx880)
 
 [&#x213C;](#)<br id="idx01">
 ## Packages
@@ -105,7 +85,6 @@ chown root:root $LFS/sources/*
 | Make-4.4.1                           | Make-4.4.1                           |
 | Man-pages-6.05.01                    | Man-pages-6.05.01                    |
 | Meson-1.2.1                          | Meson-1.2.1                          |
-| OpenSSL-3.1.2                        | OpenSSL-3.1.2                        |
 | Perl-5.38.0                          | Perl-5.38.0                          |
 | Procps-ng-4.0.3                      | Procps-ng-4.0.4                      |
 | Python-3.11.4                        | Python-3.11.5                        |
@@ -318,7 +297,7 @@ sed -e 's/+01,234,567/+1,234,567 /' \
 [&#x213C;](#)<br id="idx827">
 ## 8.27. Shadow-4.14.0 (KW) --> 8.26. Shadow-4.13 (ORI)
 
-* Identical.
+* Same procedure.
 
 [&#x213C;](#)<br id="idx828">
 ## 8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)
@@ -341,164 +320,122 @@ sed -e '/lp64=/s/lib64/lib/' \
 
 * Same again.
 
-[&#x213C;](#)<br id="idx10">
-## 8.46. OpenSSL-3.0.8
-
-* Add the version to the documentation directory name, to be consistent with other packages:
-
-```
-mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.0.8
-cp -vfr doc/* /usr/share/doc/openssl-3.0.8
-
-```
-
-[&#x213C;](#)<br id="idx11">
-## 8.49. Libffi-3.4.4
-
-* Prepare Libffi for compilation:
-
-```
-./configure --prefix=/usr          \
-            --disable-static       \
-            --with-gcc-arch=native
-
-```
-
-[&#x213C;](#)<br id="idx12">
-## 8.50. Python-3.11.2
+[&#x213C;](#)<br id="idx851">
+## 8.51. Python-3.11.5 (KW) --> 8.51. Python-3.11.4 (ORI)
 
 * If desired, install the preformatted documentation:
 
 ```
-install -v -dm755 /usr/share/doc/python-3.11.2/html
+install -v -dm755 /usr/share/doc/python-3.11.4/html
 
 tar --strip-components=1  \
     --no-same-owner       \
     --no-same-permissions \
-    -C /usr/share/doc/python-3.11.2/html \
-    -xvf ../python-3.11.2-docs-html.tar.bz2
+    -C /usr/share/doc/python-3.11.4/html \
+    -xvf ../python-3.11.4-docs-html.tar.bz2
 
 ```
 
-[&#x213C;](#)<br id="idx13">
-## 8.51. Flit-Core-3.8.0
-
-<span style="color:red; font-weight:bold;">Does not exist in the ORI Book</span> (root)
-
-* To fetch the package:
-
-```
-if [ -d $LFS/sources/ ] ; then
-  if [ -x /usr/bin/wget ] ; then
-    wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
-  else
-    echo "Where is wget? Are you still in chroot mode?"
-  fi
-else
-  echo "Where is directory $LFS/sources/ ?"
-fi
-
-```
-
-[&#x213C;](#)<br id="idx13a">
-## [8.51. Wheel-0.38.4 --> 8.52. Wheel-0.40.0](idx13a)
+[&#x213C;](#)<br id="idx853">
+## 8.53. Wheel-0.41.2 (KW) --> 8.53. Wheel-0.41.1 (ORI)
 
 * Use the ORI book instruction!
 
 ```
-PYTHONPATH=src pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+pip3 wheel -w dist --no-build-isolation --no-deps $PWD
 pip3 install --no-index --find-links=dist wheel
 
 ```
 
-[&#x213C;](#)<br id="idx14">
-## 8.54. Coreutils-9.1 --> 8.55. Coreutils-9.3
+[&#x213C;](#)<br id="idx856">
+## 8.56. Coreutils-9.4 (KW) --> 8.56. Coreutils-9.3 (ORI)
 
-* The following patch fixes this non-compliance and other internationalization-related bugs.
-
-```
-patch -Np1 -i ../coreutils-9.1-i18n-1.patch
+* POSIX requires that programs from Coreutils recognize character boundaries correctly even in multibyte locales.
 
 ```
-
-[&#x213C;](#)<br id="idx15">
-## 8.57. Gawk-5.2.1 --> 8.58. Gawk-5.2.2
-
-* To test the results, issue:
+patch -Np1 -i ../coreutils-9.3-i18n-1.patch
 
 ```
-make check
+
+[&#x213C;](#)<br id="idx863">
+## 8.63. Gzip-1.13 (KW) --> 8.63. Gzip-1.12 (ORI)
+
+* Same procedure.
+
+[&#x213C;](#)<br id="idx865">
+## 8.65. Kbd-2.6.2 (KW) --> 8.65. Kbd-2.6.1 (ORI)
+
+* The following patch fixes this issue for i386 keymaps:
+
+```
+patch -Np1 -i ../kbd-2.6.1-backspace-1.patch
 
 ```
 
 * If desired, install the documentation:
 
 ```
-mkdir -pv                                   /usr/share/doc/gawk-5.2.1
-cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-5.2.1
+cp -R -v docs/doc -T /usr/share/doc/kbd-2.6.1
 
 ```
 
-[&#x213C;](#)<br id="idx16">
-## 8.62. IPRoute2-6.1.0 --> 8.63. IPRoute2-6.3.0
+[&#x213C;](#)<br id="idx871">
+## 8.71. Vim-9.0.1837 (KW) --> 8.71. Vim-9.0.1677 (ORI)
 
-* If desired, install the documentation:
-
-```
-mkdir -pv             /usr/share/doc/iproute2-6.1.0
-cp -v COPYING README* /usr/share/doc/iproute2-6.1.0
+* The following symlink allows the documentation to be accessed via /usr/share/doc/vim-9.0.1677, 
+  making it consistent with the location of documentation for other packages:
 
 ```
-
-[&#x213C;](#)<br id="idx16a">
-## 8.65. Make-4.4 --> 8.66. Make-4.4.1
-
-* First, fix some issues identified upstream:
-
-```
-sed -e '/ifdef SIGPIPE/,+2 d' \
-    -e '/undef  FATAL_SIG/i FATAL_SIG (SIGPIPE);' \
-    -i src/main.c
+ln -sv ../vim/vim90/doc /usr/share/doc/vim-9.0.1677
 
 ```
 
-* To test the results, issue:
-
-```
-make check
-
-```
-
-[&#x213C;](#)<br id="idx17">
-## 8.69. Vim-9.0.1273 --> 8.70. Vim-9.0.1503
-
-* The following symlink allows the documentation to be accessed via /usr/share/doc/vim-9.0.1273, making it consistent with the location of documentation for other packages:
-
-```
-ln -sv ../vim/vim90/doc /usr/share/doc/vim-9.0.1273
-
-```
-
-[&#x213C;](#)<br id="idx18">
-## 8.72. Procps-ng-4.0.2 --> 8.73. Procps-ng-4.0.3
+[&#x213C;](#)<br id="idx876">
+## 8.76. Procps-ng-4.0.4 (KW) --> 8.76. Procps-ng-4.0.3 (ORI)
 
 * Prepare Procps-ng for compilation:
 
 ```
 ./configure --prefix=/usr                           \
-            --docdir=/usr/share/doc/procps-ng-4.0.2 \
+            --docdir=/usr/share/doc/procps-ng-4.0.3 \
             --disable-static                        \
             --disable-kill
 
 ```
 
-[&#x213C;](#)<br id="idx19">
-## 8.76. Sysvinit-3.06 --> 8.77. Sysvinit-3.07
+[&#x213C;](#)<br id="idx877">
+## 8.77. Util-linux-2.39.2 (KW) --> 8.77. Util-linux-2.39.1 (ORI)
+
+* Prepare Util-linux for compilation:
+
+```
+./configure ADJTIME_PATH=/var/lib/hwclock/adjtime \
+            --bindir=/usr/bin    \
+            --libdir=/usr/lib    \
+            --runstatedir=/run   \
+            --sbindir=/usr/sbin  \
+            --disable-chfn-chsh  \
+            --disable-login      \
+            --disable-nologin    \
+            --disable-su         \
+            --disable-setpriv    \
+            --disable-runuser    \
+            --disable-pylibmount \
+            --disable-static     \
+            --without-python     \
+            --without-systemd    \
+            --without-systemdsystemunitdir \
+            --docdir=/usr/share/doc/util-linux-2.39.1
+
+```
+
+[&#x213C;](#)<br id="idx880">
+## 8.80. Sysvinit-3.08 (KW) --> 8.80. Sysvinit-3.07 (ORI)
 
 * First, apply a patch that removes several programs installed by other packages, clarifies a message, and fixes a compiler warning:
 
 ```
-patch -Np1 -i ../sysvinit-3.06-consolidated-1.patch
+patch -Np1 -i ../sysvinit-3.07-consolidated-1.patch
 
 ```
 
