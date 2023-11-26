@@ -20,7 +20,9 @@ permalink: LFS/
 * [8.19. Binutils-2.41 (KW) --> 8.18. Binutils-2.41 (ORI)](#idx819)
 * [8.21. MPFR-4.2.1 (KW) --> 8.20. MPFR-4.2.0 (ORI)](#idx821)
 * [8.27. Shadow-4.14.0 (KW) --> 8.26. Shadow-4.13 (ORI)](#idx827)
-* [8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)](#idx09)
+* [8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)](#idx828)
+* [8.29. Ncurses-6.4 (KW) --> 8.29. Ncurses-6.4 (ORI)](#idx829)
+* [8.30. Sed-4.9 (KW) --> 8.30. Sed-4.9 (ORI)](#idx830)
 * [8.46. OpenSSL-3.0.8](#idx10)
 * [8.49. Libffi-3.4.4](#idx11)
 * [8.50. Python-3.11.2](#idx12)
@@ -313,7 +315,7 @@ sed -e 's/+01,234,567/+1,234,567 /' \
 
 * Identical.
 
-[&#x213C;](#)<br id="idx09">
+[&#x213C;](#)<br id="idx828">
 ## 8.28. GCC-13.2.0 (KW) --> 8.27. GCC-13.2.0 (ORI)
 
 * On ARM64 hosts, set the default directory name for 64-bit libraries to “lib”:
@@ -323,6 +325,16 @@ sed -e '/lp64=/s/lib64/lib/' \
     -i.orig gcc/config/aarch64/t-aarch64-linux
 
 ```
+
+[&#x213C;](#)<br id="idx829">
+## 8.29. Ncurses-6.4 (KW) --> 8.29. Ncurses-6.4 (ORI)
+
+* Same again.
+
+[&#x213C;](#)<br id="idx830">
+## 8.30. Sed-4.9 (KW) --> 8.30. Sed-4.9 (ORI)
+
+* Same again.
 
 [&#x213C;](#)<br id="idx10">
 ## 8.46. OpenSSL-3.0.8
